@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Asha P S, SOC Analyst (L1) and Cybersecurity Intern. Threat detection, log analysis, VAPT and DFIR.">
+<title>Asha P S | SOC Analyst (L1) &amp; Cybersecurity Portfolio</title>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<style>
+:root{--bg:#030709;--card:#08121a;--text:#e4f3f8;--muted:#8fa6b3;--accent:#22d3ee;--accent2:#0ea5c6;--line:#12303d;--glow:0 0 22px rgba(34,211,238,.35);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(70px + env(safe-area-inset-top,0px));scroll-behavior:smooth;height:100%}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace}
+#mx{position:fixed;inset:0;width:100%;height:100%;z-index:0;opacity:.16;pointer-events:none}
+#root{position:relative;z-index:1}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(3,7,9,.78);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+nav b{color:var(--accent);text-shadow:var(--glow)}
+nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:.88rem;transition:color .2s}
+nav a:hover,nav a:focus-visible{color:var(--accent)}
+@media(max-width:760px){nav .links{display:none}}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.hero{padding:72px 0 56px;display:grid;gap:36px;grid-template-columns:1.1fr 1fr;align-items:center}
+@media(max-width:860px){.hero{grid-template-columns:1fr;padding-top:44px}}
+.tag{color:var(--accent);font-size:.9rem}
+h1{font-size:clamp(2.6rem,8vw,4.6rem);line-height:1.05;margin:.2em 0;font-weight:800;letter-spacing:-.02em}
+h1 span{color:var(--accent);text-shadow:var(--glow)}
+.title{color:var(--muted);font-size:1.08rem;max-width:560px}
+.btn{display:inline-flex;align-items:center;gap:8px;margin:22px 10px 0 0;padding:11px 20px;border-radius:10px;text-decoration:none;font-weight:600;border:1px solid var(--accent);color:var(--accent);background:transparent;cursor:pointer;font-size:.95rem;transition:box-shadow .25s,background .25s}
+.btn:hover{box-shadow:var(--glow);background:rgba(34,211,238,.08)}
+.btn.fill{background:var(--accent);color:#021a1f}
+.btn.fill:hover{background:#67e8f9}
+.term{background:#02050a;border:1px solid var(--line);border-radius:12px;box-shadow:var(--glow);overflow:hidden}
+.term .bar{display:flex;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line)}
+.term .bar i{width:10px;height:10px;border-radius:50%;background:#1b3a4a}
+.term pre{margin:0;padding:16px;min-height:210px;font-size:.84rem;white-space:pre-wrap;color:#bdeefa}
+.cur{display:inline-block;width:8px;height:15px;background:var(--accent);vertical-align:-2px;animation:bl 1s steps(2) infinite}
+@keyframes bl{50%{opacity:0}}
+section{padding:60px 0;border-top:1px solid var(--line)}
+h2{font-size:1.7rem;margin:0 0 26px;font-weight:700}
+h2::before{content:"# ";color:var(--accent)}
+.card{background:linear-gradient(160deg,var(--card),#050b10);border:1px solid var(--line);border-radius:14px;padding:20px;transition:border-color .25s,box-shadow .25s}
+.card:hover{border-color:var(--accent);box-shadow:var(--glow)}
+.card h3{margin:0 0 6px;font-size:1.05rem}
+.card p,.card li{color:var(--muted);font-size:.93rem}
+.chip{display:inline-block;background:#0b1f2a;border:1px solid var(--line);color:var(--accent);border-radius:6px;padding:2px 9px;font-size:.78rem;margin:0 6px 6px 0}
+.sk{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 8px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--text);cursor:pointer;font-size:.85rem;transition:all .25s}
+.sk:hover,.sk[aria-pressed=true]{border-color:var(--accent);box-shadow:var(--glow);color:var(--accent);transform:translateY(-3px)}
+.det{margin-top:18px;padding:14px 18px;border:1px dashed var(--accent);border-radius:10px;color:var(--muted);font-size:.9rem}
+.det b{color:var(--accent)}
+.dash{display:grid;gap:14px}
+.stat{font-size:1.9rem;font-weight:800;color:var(--accent);text-shadow:var(--glow)}
+.bar-row{display:flex;align-items:center;gap:10px;font-size:.78rem;color:var(--muted);margin:6px 0}
+.bar-row div{flex:1;height:8px;background:#0b1f2a;border-radius:4px;overflow:hidden}
+.bar-row i{display:block;height:100%;border-radius:4px;transition:width .9s}
+.feed{font-size:.76rem;height:170px;overflow:hidden;color:#bdeefa}
+.feed div{padding:3px 0;border-bottom:1px solid #0d2230;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sev-h{color:#ff6b6b}.sev-m{color:#ffd166}.sev-l{color:#22d3ee}
+.note{color:var(--muted);font-size:.82rem;margin-top:14px}
+.live{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-right:6px;animation:bl 1.4s infinite}
+.photo{width:220px;height:220px;object-fit:cover;object-position:50% 20%;border-radius:50%;border:2px solid var(--accent);box-shadow:var(--glow);flex-shrink:0}
+.tl{border-left:2px solid var(--line);padding-left:22px;position:relative}
+.tl::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:var(--glow)}
+footer{padding:30px 0 50px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<canvas id="mx" aria-hidden="true"></canvas>
+<div id="root"></div>
+<script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/htm@3.1.1/dist/htm.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/framer-motion@10.16.4/dist/framer-motion.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lucide-react@0.383.0/dist/umd/lucide-react.min.js"></script>
+<script>
+const {useState,useEffect}=React;
+const html=htm.bind(React.createElement);
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const FM=window.Motion||window.FramerMotion||{};
+const strip=({initial,animate,whileInView,whileHover,whileTap,viewport,transition,...r})=>r;
+const motion=FM.motion||new Proxy({},{get:(_,t)=>p=>React.createElement(t,strip(p))});
+const LR=window.lucideReact||{};
+const Ic=n=>LR[n]||(()=>null);
+const [Shield,Terminal,Mail,Linkedin,Github,Download,Activity,Search,Bug,Fingerprint,Radar,Network,Eye,Cpu,Database,Globe,Monitor,Award,GraduationCap,ExternalLink,MapPin,Lock,Instagram]=
+['Shield','Terminal','Mail','Linkedin','Github','Download','Activity','Search','Bug','Fingerprint','Radar','Network','Eye','Cpu','Database','Globe','Monitor','Award','GraduationCap','ExternalLink','MapPin','Lock','Instagram'].map(Ic);
+
+const Reveal=({children,delay=0,className=''})=>html`<${motion.div} className=${className}
+  initial=${reduce?false:{opacity:0,y:26}} whileInView=${{opacity:1,y:0}} viewport=${{once:true,margin:'-40px'}}
+  transition=${{duration:.6,delay}}>${children}<//>`;
+const Head=({t})=>html`<${Reveal}><h2>${t}</h2><//>`;
+
+/* Matrix rain */
+(function(){
+  if(reduce)return;
+  const c=document.getElementById('mx'),x=c.getContext('2d');
+  const ch='01ABCDEF<>/{}$#';let cols,drops;
+  const fit=()=>{c.width=innerWidth;c.height=innerHeight;cols=Math.floor(c.width/16);drops=Array(cols).fill(0).map(()=>Math.random()*50)};
+  fit();addEventListener('resize',fit);
+  setInterval(()=>{x.fillStyle='rgba(3,7,9,.12)';x.fillRect(0,0,c.width,c.height);x.fillStyle='#22d3ee';x.font='14px monospace';
+    drops.forEach((d,i)=>{x.fillText(ch[Math.floor(Math.random()*ch.length)],i*16,d*16);drops[i]=d*16>c.height&&Math.random()>.97?0:d+1})},60);
+})();
+
+/* Terminal */
+const SCRIPT=[
+ ['$ whoami','asha-p-s // SOC Analyst (L1)'],
+ ['$ cat focus.txt','threat detection | log analysis | VAPT | DFIR'],
+ ['$ cat tools.txt','Splunk, ELK, Wazuh, Nmap, Burp Suite, Wireshark'],
+ ['$ status','open to SOC Analyst (L1) / Cybersecurity Intern roles']
+];
+const full=SCRIPT.map(s=>s[0]+'\n'+s[1]).join('\n\n');
+function Term(){
+  const [n,setN]=useState(reduce?full.length:0);
+  useEffect(()=>{if(reduce)return;const t=setInterval(()=>setN(v=>v>=full.length?v:v+1),38);return()=>clearInterval(t)},[]);
+  return html`<div className="term mono" role="img" aria-label="Animated terminal introducing Asha P S, SOC Analyst">
+    <div className="bar"><i/><i/><i/></div>
+    <pre>${full.slice(0,n)}<span className="cur"/></pre></div>`;
+}
+
+/* Skills */
+const SK=[
+ [Database,'Splunk','SIEM','Alert triage and log correlation during the Purple Nexus internship.'],
+ [Activity,'ELK Stack','SIEM','Event monitoring and alert triage (Elasticsearch, Logstash, Kibana).'],
+ [Shield,'Wazuh','SIEM','Alert triage and log correlation covered in SOC training.'],
+ [Radar,'Nmap','VAPT','Port scanning and service enumeration in lab setups.'],
+ [Bug,'Burp Suite','VAPT','Basic web application testing and OWASP Top 10 findings.'],
+ [Search,'Nikto','VAPT','Web server scanning in lab environments.'],
+ [Network,'Wireshark','Network','Network traffic analysis to spot hidden files and suspicious activity.'],
+ [Eye,'Zeek','Network','Working knowledge (basics).'],
+ [Eye,'Snort','Network','Working knowledge (basics).'],
+ [Cpu,'Sysmon','Forensics','Windows Event and Sysmon log analysis.'],
+ [Fingerprint,'Autopsy','Forensics','Beginner-level digital forensics.'],
+ [Fingerprint,'Redline','Forensics','Beginner-level forensics and basic malware analysis.'],
+ [Globe,'VirusTotal','Threat Intel','Threat validation and IOC checks.'],
+ [Globe,'Shodan','Threat Intel','Threat validation and exposure checks.'],
+ [Globe,'AlienVault OTX','Threat Intel','IOC verification for phishing analysis.'],
+ [Terminal,'Kali Linux','OS','Linux environment for security tooling.'],
+ [Monitor,'Windows','OS','Windows event log investigation.']
+];
+function Skills(){
+  const [s,setS]=useState(0);
+  const [, name, cat, note]=SK[s];
+  return html`<section id="skills"><div className="wrap">
+    <${Head} t="Technical Skills"/>
+    <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
+      ${SK.map((k,i)=>html`<${Reveal} delay=${Math.min(i*.03,.3)} key=${k[1]}>
+        <button className="sk w-full" aria-pressed=${i===s} onClick=${()=>setS(i)} onMouseEnter=${()=>setS(i)}>
+          <${k[0]} size=${24} aria-hidden="true"/><span>${k[1]}</span></button><//>`)}
+    </div>
+    <div className="det mono" aria-live="polite"><b>${name}</b> · ${cat} — ${note}</div>
+  </div></section>`;
+}
+
+/* SOC dashboard (demo only) */
+const EV=[
+ ['h','Brute-force pattern on SSH, repeated failed logins'],['m','Unusual login time for user account'],
+ ['l','Phishing email reported, IOC extracted'],['h','Malware indicator matched on endpoint'],
+ ['m','Port scan detected from external host'],['l','Hash checked on VirusTotal, clean'],
+ ['m','Abnormal user behaviour flagged'],['l','Sysmon process creation reviewed']
+];
+const pad=v=>String(v).padStart(2,'0');
+function Dash(){
+  const [log,setLog]=useState([]);
+  const [c,setC]=useState({a:128,o:6});
+  const [bars,setBars]=useState([72,48,30]);
+  useEffect(()=>{
+    let i=0;
+    const tick=()=>{const d=new Date(),e=EV[i++%EV.length];
+      setLog(l=>[{t:pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds()),s:e[0],m:e[1]},...l].slice(0,7));
+      setC(v=>({a:v.a+1,o:Math.max(2,Math.min(12,v.o+(Math.random()>.5?1:-1)))}));
+      setBars([40+Math.random()*55,25+Math.random()*50,15+Math.random()*40])};
+    tick();if(reduce)return;const t=setInterval(tick,2200);return()=>clearInterval(t);
+  },[]);
+  const lab={h:'HIGH',m:'MED ',l:'LOW '};
+  return html`<div className="card dash">
+    <div className="mono tag"><span className="live"/>SOC DASHBOARD · DEMONSTRATION ONLY (simulated data)</div>
+    <div className="grid grid-cols-2 gap-3"><div><div className="stat">${c.a}</div><div className="note" style=${{margin:0}}>Alerts triaged (demo)</div></div>
+      <div><div className="stat">${c.o}</div><div className="note" style=${{margin:0}}>Open cases (demo)</div></div></div>
+    <div>${[['High','#ff6b6b'],['Medium','#ffd166'],['Low','#22d3ee']].map((b,i)=>html`<div className="bar-row mono" key=${b[0]}><span style=${{width:56}}>${b[0]}</span><div><i style=${{width:bars[i]+'%',background:b[1]}}/></div></div>`)}</div>
+    <div className="feed mono" aria-hidden="true">${log.map((l,i)=>html`<div key=${l.t+i}>${l.t} <span className=${'sev-'+l.s}>[${lab[l.s]}]</span> ${l.m}</div>`)}</div>
+  </div>`;
+}
+
+const EXP=[
+ [Activity,'SOC Monitoring & Alert Triage','Monitored security events and triaged alerts in Splunk and ELK Stack.'],
+ [Search,'Log Correlation & Detection','Correlated logs to spot possible incidents and investigated brute-force attempts, malware indicators and unusual user behaviour.'],
+ [Lock,'Phishing & IOC Analysis','Analysed phishing emails and verified IOCs on VirusTotal and AlienVault OTX.'],
+ [Bug,'VAPT (Basics)','Basic network and web tests with Nmap, Nikto and Burp Suite in lab setups, found OWASP Top 10 issues and wrote up fixes.'],
+ [Fingerprint,'Digital Forensics (Beginner)','Basic malware analysis and forensics with Autopsy and Redline.'],
+ [Shield,'Frameworks','MITRE ATT&CK, Cyber Kill Chain, Diamond Model and NIST/SANS incident response.']
+];
+const PROJ=[
+ ['Web Application Vulnerability Scanner','Crawls pages and input fields and tests for XSS, SQL injection and CSRF issues, with downloadable reports through a Flask interface. Tested on an intentionally vulnerable site.',['Python','Flask','Requests','BeautifulSoup'],'https://github.com/asha-ps-security'],
+ ['Phishing Link Scanner','A Python security tool that checks links for signs of phishing.',['Python','Cyber Security'],'https://github.com/asha-ps-security'],
+ ['Password Strength Checker','Rates passwords as weak, moderate or strong, with a real-time Tkinter GUI version.',['Python','Tkinter'],'https://github.com/asha-ps-security'],
+ ['Network Port Scanning with Nmap','Scanned a local network for open ports and services and documented the exposure.',['Nmap','Wireshark'],'https://github.com/asha-ps-security']
+];
+
+function App(){
+  return html`<div>
+  <nav><div className="wrap"><b className="mono">~/asha</b><div className="links">
+    ${[['about','About'],['skills','Skills'],['expertise','Expertise'],['experience','Experience'],['credentials','Credentials'],['projects','Projects'],['contact','Contact']].map(l=>html`<a key=${l[0]} href=${'#'+l[0]}>${l[1]}</a>`)}
+  </div></div></nav>
+
+  <main>
+  <header className="wrap hero">
+    <div>
+      <div className="tag mono">$ ./portfolio --user asha</div>
+      <h1>Asha <span>P S</span></h1>
+      <p className="title">SOC Analyst (L1) | Cybersecurity Intern | Threat Detection &amp; VAPT</p>
+      <p className="note mono" style=${{display:'flex',alignItems:'center',gap:6}}><${MapPin} size=${14}/> Thrissur, Kerala, India</p>
+      <a className="btn fill" href="#projects">View projects</a>
+      <a className="btn" href="#contact">Contact me</a>
+      <a className="btn" href="https://www.linkedin.com/in/asha-p-s-23a26b227/" target="_blank" rel="noopener"><${Linkedin} size=${16}/> Connect on LinkedIn</a>
+      <a className="btn" href="Asha_PS_Resume.pdf" target="_blank" rel="noopener"><${Download} size=${16}/> Download Resume</a>
+    </div>
+    <${Term}/>
+  </header>
+
+  <section id="about"><div className="wrap"><${Head} t="About Me"/>
+    <${Reveal}><div className="flex flex-col md:flex-row gap-8 items-center"><img src="asha-photo.jpg" alt="Portrait of Asha P S" className="photo" width="220" height="220"/><div style=${{maxWidth:760,color:'#c3d6de',fontSize:'1.05rem'}}>
+      <p>I am an early-career cybersecurity fresher with a B.Tech (2019 – 2023), CEH training, SOC, VAPT &amp; DFIR training and the Kerala Police Cyber First Responder certificate. I put that training into practice as a Cyber Security Intern at Purple Nexus.</p>
+      <p>My hands-on work covers SOC monitoring, log analysis, incident investigation, phishing analysis, IOC checks, VAPT and digital forensics, using Splunk, ELK Stack and Wazuh, along with practice labs on TryHackMe and Hack The Box. I also write clear security reports and incident notes, and I enjoy turning security concepts into working tools.</p>
+      <p>I am looking for a SOC Analyst (L1) or Cybersecurity Intern role where I can keep learning with a team and build more real-world experience.</p></div></div><//>
+  </div></section>
+
+  <${Skills}/>
+
+  <section id="expertise"><div className="wrap"><${Head} t="SOC Analyst & VAPT Expertise"/>
+    <div className="grid md:grid-cols-2 gap-5 items-start">
+      <div className="grid gap-4">
+        <${Reveal}><div className="card"><h3>SOC Operations</h3><p>SIEM monitoring, alert triage, log analysis, event correlation, brute-force and malware detection, initial incident response.</p>
+          ${['MITRE ATT&CK','Cyber Kill Chain','Diamond Model','NIST/SANS'].map(t=>html`<span className="chip mono" key=${t}>${t}</span>`)}</div><//>
+        <${Reveal} delay=${.1}><div className="card"><h3>VAPT (Basics)</h3><p>Network and web testing, OWASP Top 10, reconnaissance, port scanning, service enumeration and remediation-focused reports.</p>
+          ${['Nmap','Burp Suite','Nikto','OWASP Top 10'].map(t=>html`<span className="chip mono" key=${t}>${t}</span>`)}</div><//>
+        <${Reveal} delay=${.2}><div className="card"><h3>Phishing, Malware & Forensics</h3><p>Phishing email analysis, IOC extraction, threat validation, basic static and behavioural malware analysis, Windows Event and Sysmon analysis.</p></div><//>
+      </div>
+      <${Reveal}><${Dash}/><//>
+    </div></div></section>
+
+  <section id="experience"><div className="wrap"><${Head} t="Professional Experience"/>
+    <${Reveal}><div className="tl"><h3 style=${{margin:0,fontSize:'1.2rem'}}>Cyber Security Intern</h3>
+      <div className="mono tag">Purple Nexus, Kochi · November 2025 – September 2026</div>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" style=${{marginTop:18}}>
+      ${EXP.map(e=>html`<div className="card" key=${e[1]}><${e[0]} size=${22} color="#22d3ee" aria-hidden="true"/><h3 style=${{marginTop:8}}>${e[1]}</h3><p style=${{margin:0}}>${e[2]}</p></div>`)}
+      </div></div><//>
+  </div></section>
+
+  <section id="credentials"><div className="wrap"><${Head} t="Certifications & Education"/>
+    <div className="grid md:grid-cols-2 gap-4">
+      ${[[Award,'Certified Ethical Hacker (CEH)','Blitz Academy, Kochi · Nov 2024 – Jun 2025'],
+         [Award,'Cyber First Responder Certificate','Kerala Police'],
+         [Award,'SOC, VAPT & DFIR Training','Skill Merge Hackers Academy, Kochi · 2026'],
+         [GraduationCap,'B.Tech','Rajadhani Institute of Science and Technology · 2019 – 2023']
+        ].map((c,i)=>html`<${Reveal} delay=${i*.08} key=${c[1]}><div className="card"><${c[0]} size=${24} color="#22d3ee" aria-hidden="true"/><h3 style=${{marginTop:8}}>${c[1]}</h3><p style=${{margin:0}}>${c[2]}</p></div><//>`)}
+    </div></div></section>
+
+  <section id="projects"><div className="wrap"><${Head} t="Cybersecurity Projects"/>
+    <div className="grid md:grid-cols-2 gap-4">
+      ${PROJ.map((p,i)=>html`<${Reveal} delay=${i*.08} key=${p[0]}><div className="card" style=${{height:'100%'}}>
+        <h3>${p[0]}</h3><p>${p[1]}</p><div>${p[2].map(t=>html`<span className="chip mono" key=${t}>${t}</span>`)}</div>
+        <a href=${p[3]} target="_blank" rel="noopener" className="mono tag" style=${{textDecoration:'none',display:'inline-flex',gap:6,alignItems:'center'}}><${Github} size=${15}/> GitHub <${ExternalLink} size=${13}/></a></div><//>`)}
+    </div>
+    <p className="note mono">// Project details and repository links can be updated as more work is added.</p>
+  </div></section>
+
+  <section id="contact"><div className="wrap"><${Head} t="Contact"/>
+    <${Reveal}><p style=${{color:'#c3d6de',maxWidth:620}}>Open to SOC Analyst (L1) and Cybersecurity Intern opportunities. Get in touch.</p>
+      <a className="btn fill" href="mailto:ashaputhenveetil@gmail.com"><${Mail} size=${16}/> ashaputhenveetil@gmail.com</a>
+      <a className="btn" href="https://www.linkedin.com/in/asha-p-s-23a26b227/" target="_blank" rel="noopener"><${Linkedin} size=${16}/> LinkedIn</a>
+      <a className="btn" href="https://github.com/asha-ps-security" target="_blank" rel="noopener"><${Github} size=${16}/> GitHub</a>
+      <a className="btn" href="https://www.instagram.com/im.ashhaa" target="_blank" rel="noopener"><${Instagram} size=${16}/> Instagram</a><//>
+  </div></section>
+  </main>
+  <footer><div className="wrap mono">© 2026 Asha P S · Thrissur, Kerala, India</div></footer>
+  </div>`;
+}
+ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
+</script>
+</body>
+</html>
